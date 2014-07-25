@@ -41,11 +41,14 @@ jgoodies :
 	cd jgoodies && unzip jgoodies-looks-2_6_0.zip
 	cp jgoodies/jgoodies-looks-2.6.0/jgoodies-looks-2.6.0.jar jgoodies/jgoodies-looks.jar
 	rm -rf jgoodies/jgoodies-looks-2.6.0
+ui.jar :
+	cp /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar ui.jar
 
 almost-clean :
 	rm -rf bin/hours
 	rm -rf hours.jar
 	rm -rf Hours.app
+	rm -rf ui.jar
 
 clean : almost-clean
 	rm -rf jgoodies
