@@ -4,14 +4,14 @@ javafiles = Hours.java HoursCategory.java HoursGroup.java HoursGroupList.java
 src = $(addprefix src/,$(javafiles))
 appstub = /System/Library/Frameworks/JavaVM.framework/Versions/Current/Resources/MacOS/JavaApplicationStub
 graphicsfiles = cancel.png clock.png clock2.png edit.png gc.png greenc.png
-graphics = $(addprefix graphics/,$(graphicsfiles))
+graphics = $(addprefix resources/,$(graphicsfiles))
 jgoodiesfiles = jgoodies-common.jar jgoodies-looks.jar
 jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
 
 .PHONY : all clean almost-clean
 
 hours.jar : bin/hours $(graphics)
-	jar cf $@ graphics -C bin hours
+	jar cf $@ resources -C bin hours
 
 bin/hours : $(src) | bin
 	javac $(src) -d bin

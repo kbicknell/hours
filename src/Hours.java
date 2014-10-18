@@ -72,7 +72,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
     super();
     macOSApplication = Application.getApplication();
     try {
-      dockIcon = ImageIO.read(this.getClass().getResource("/graphics/clock2.png"));
+      dockIcon = ImageIO.read(this.getClass().getResource("/resources/clock2.png"));
     } catch (IOException e1) {
       e1.printStackTrace();
     }
@@ -153,12 +153,12 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   }
   
   void stopButtonToStop() {
-    stopButton.setIcon(new ImageIcon(this.getClass().getResource("/graphics/cancel.png")));
+    stopButton.setIcon(new ImageIcon(this.getClass().getResource("/resources/cancel.png")));
     stopButton.setActionCommand("stop");
   }
 
   void stopButtonToAdvance() {
-    stopButton.setIcon(new ImageIcon(this.getClass().getResource("/graphics/clock.png")));
+    stopButton.setIcon(new ImageIcon(this.getClass().getResource("/resources/clock.png")));
     stopButton.setActionCommand("advance");
   }
   
@@ -203,7 +203,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
       }
       {
         editButton = new JButton();
-        editButton.setIcon(new ImageIcon(this.getClass().getResource("/graphics/edit.png")));
+        editButton.setIcon(new ImageIcon(this.getClass().getResource("/resources/edit.png")));
         editButtonToEdit();
         editButton.addActionListener(this);
       }
