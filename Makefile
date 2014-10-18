@@ -10,8 +10,8 @@ jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
 
 .PHONY : all clean almost-clean
 
-hours.jar : bin/hours $(graphics)
-	jar cf $@ resources -C bin hours
+hours.jar : bin/hours
+	jar cf $@ -C bin hours
 
 bin/hours : $(src) | bin
 	javac $(src) -d bin
@@ -27,6 +27,7 @@ Hours.app : hours.jar $(appstub) mac/Info.plist jgoodies ui.jar
 	cp mac/PkgInfo Hours.app/Contents/
 	cp mac/Hours.icns Hours.app/Contents/Resources/
 	cp hours.jar Hours.app/Contents/Resources/Java/jar_0.jar
+	cp resources/*.png Hours.app/Contents/Resources/
 	$(foreach jgoody,$(jgoodies),cp $(jgoody) Hours.app/Contents/Resources/Java/;)
 	cp ui.jar Hours.app/Contents/Resources/Java/
 	SetFile -a B Hours.app
