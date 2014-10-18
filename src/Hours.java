@@ -1,6 +1,7 @@
 package hours;
 import java.awt.Font;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -71,11 +72,8 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   public Hours() {
     super();
     macOSApplication = Application.getApplication();
-    try {
-      dockIcon = ImageIO.read(this.getClass().getResource("/resources/clock2.png"));
-    } catch (IOException e1) {
-      e1.printStackTrace();
-    }
+    java.awt.Image iconAsImage = Toolkit.getDefaultToolkit().getImage("NSImage://clock2");
+    dockIcon = (BufferedImage) iconAsImage;
     macOSApplication.setDockIconImage(dockIcon);
     
     macOSApplication.setQuitHandler(new QuitHandler() {
