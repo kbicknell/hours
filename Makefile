@@ -33,11 +33,11 @@ Hours.app : hours.jar $(appstub) mac/Info.plist jgoodies ui.jar
 
 jgoodies :
 	mkdir -p jgoodies
-	cd jgoodies && wget http://www.jgoodies.com/download/libraries/common/jgoodies-common-1_8_0.zip
+	cd jgoodies && curl -O http://www.jgoodies.com/download/libraries/common/jgoodies-common-1_8_0.zip
 	cd jgoodies && unzip jgoodies-common-1_8_0.zip
 	cp jgoodies/jgoodies-common-1.8.0/jgoodies-common-1.8.0.jar jgoodies/jgoodies-common.jar
 	rm -rf jgoodies/jgoodies-common-1.8.0/
-	cd jgoodies && wget http://www.jgoodies.com/download/libraries/looks/jgoodies-looks-2_6_0.zip
+	cd jgoodies && curl -O http://www.jgoodies.com/download/libraries/looks/jgoodies-looks-2_6_0.zip
 	cd jgoodies && unzip jgoodies-looks-2_6_0.zip
 	cp jgoodies/jgoodies-looks-2.6.0/jgoodies-looks-2.6.0.jar jgoodies/jgoodies-looks.jar
 	rm -rf jgoodies/jgoodies-looks-2.6.0
