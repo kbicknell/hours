@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docbase="/home/aviram/My Documents/BlogSphere/blogicons"
+   sodipodi:docname="clock2.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="50"
+     guidetolerance="10"
+     objecttolerance="50"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9414062"
+     inkscape:cx="128"
+     inkscape:cy="128"
+     inkscape:document-units="px"
+     inkscape:current-layer="icons"
+     inkscape:window-width="1024"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:object-bbox="false"
+     inkscape:object-points="false"
+     inkscape:object-nodes="false"
+     inkscape:guide-points="false"
+     width="2979.92px"
+     height="2500px"
+     showgrid="true"
+     inkscape:grid-bbox="false"
+     inkscape:object-paths="true" />
+  <defs
+     id="gradients">
+	  <clipPath
+				  clipPathUnits="userSpaceOnUse"
+				  id="clockClipper">
+		  <rect
+				 id="rect2316"
+				 width="157.18419"
+				 rx="31.303631"
+				 ry="31.303631"
+				 y="18.700287"
+				 x="3.0947762"
+				 height="157.18419"
+				 clip-path="none" />
+	  </clipPath>
+
+    <linearGradient
+       y2="230"
+       y1="25"
+       x2="230"
+       x1="25"
+       gradientUnits="userSpaceOnUse"
+       id="clockGradient">
+      <stop
+         id="stop2270"
+         offset="0"
+         style="stop-color:#000099;stop-opacity:1" />
+      <stop
+         id="stop2272"
+         offset="0.5"
+         style="stop-color:#8888b6;stop-opacity:1" />
+      <stop
+         id="stop2274"
+         offset="1"
+         style="stop-color:#000099;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" />
+        <dc:title>Blog Icons</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Avi Alkalay</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>These are the Blog Icons, initially based on the FeedIcons.com, but simplified (on XML level) and new icons created.</dc:description>
+        <dc:source>http://avi.alkalay.net</dc:source>
+        <dc:relation />
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc/2.5/">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Notice" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Attribution" />
+        <cc:prohibits
+           rdf:resource="http://web.resource.org/cc/CommercialUse" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="icons"
+     inkscape:label="icons"
+     style="display:inline">
+    <g
+       id="clock2">
+      <rect
+         style="fill:#000099;fill-opacity:1"
+         id="clock2Outer"
+         width="256"
+         rx="55"
+         ry="55"
+         height="256"
+         x="0"
+         y="0" />
+      <rect
+         style="fill:#8888b6;fill-opacity:1"
+         id="clock2Mid"
+         width="246"
+         rx="50"
+         ry="50"
+         height="246"
+         x="5"
+         y="5" />
+      <rect
+         style="fill:url(#clockGradient)"
+         id="clock2Inner"
+         width="236"
+         rx="47"
+         ry="47"
+         y="10"
+         x="10"
+         height="236" />
+      <g
+         clip-path="url(#clockClipper)"
+         transform="matrix(1.5014233,0,0,1.5014233,5.353431,-18.077047)"
+         id="clock2Circle">
+        <circle
+           id="circle2301"
+           cx="128"
+           cy="128"
+           r="90"
+           sodipodi:cx="128"
+           sodipodi:cy="128"
+           sodipodi:rx="90"
+           sodipodi:ry="90"
+           style="fill:none;stroke:#ffffff;stroke-width:25" />
+        <g
+           id="clock2Pointers"
+           style="stroke:#ffffff;stroke-width:20;stroke-linecap:round"
+           transform="matrix(0.8660254,-0.5,0.5,0.8660254,-46.851252,81.148748)">
+          <path
+             d="M 128,128 L 128,70"
+             id="clock2Minute" />
+          <path
+             d="M 128,128 L 90,128"
+             id="clock2Hour" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
