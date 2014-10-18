@@ -1,10 +1,10 @@
 package hours;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -36,7 +36,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   private JLabel dateLabel;
   private JLabel dayLabel;
   private Application macOSApplication;
-  BufferedImage dockIcon;
+  Image dockIcon;
   static final private String hoursFilename = ".hours";
   static final private String boundsFilename = ".hoursbounds";
   int x;
@@ -72,8 +72,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   public Hours() {
     super();
     macOSApplication = Application.getApplication();
-    java.awt.Image iconAsImage = Toolkit.getDefaultToolkit().getImage("NSImage://clock2");
-    dockIcon = (BufferedImage) iconAsImage;
+    dockIcon = Toolkit.getDefaultToolkit().getImage("NSImage://clock2");
     macOSApplication.setDockIconImage(dockIcon);
     
     macOSApplication.setQuitHandler(new QuitHandler() {
