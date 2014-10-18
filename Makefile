@@ -3,7 +3,7 @@ all : Hours.app
 javafiles = Hours.java HoursCategory.java HoursGroup.java HoursGroupList.java
 src = $(addprefix src/,$(javafiles))
 appstub = /System/Library/Frameworks/JavaVM.framework/Versions/Current/Resources/MacOS/JavaApplicationStub
-graphicsfiles = cancel.png clock.png clock2.png edit.png gc.png greenc.png process-stop.png
+graphicsfiles = cancel.png clock.png clock2.png edit.png gc.png greenc.png
 graphics = $(addprefix graphics/,$(graphicsfiles))
 jgoodiesfiles = jgoodies-common.jar jgoodies-looks.jar
 jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
