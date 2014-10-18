@@ -4,6 +4,7 @@
 package hours;
 
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
@@ -28,9 +29,9 @@ public class HoursCategory implements ActionListener {
   public JLabel catLabel;
   public JLabel minLabel;
   public JTextField minTextField;
-  private ImageIcon greyIcon = new ImageIcon(this.getClass().getResource("/graphics/gc.png"));
+  private ImageIcon greyIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage("NSImage://gc"));
   
-  private ImageIcon greenIcon = new ImageIcon(this.getClass().getResource("/graphics/greenc.png"));
+  private ImageIcon greenIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage("NSImage://greenc"));
   HoursGroup group;
   
   public void actionPerformed(ActionEvent e) {
