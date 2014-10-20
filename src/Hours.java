@@ -213,34 +213,6 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
         updateDateLabel();
       }
 
-      SequentialGroup headerGroupV = thisLayout.createSequentialGroup()
-      .addGroup(
-          thisLayout.createParallelGroup()
-          .addGroup(
-              thisLayout.createSequentialGroup()
-              .addComponent(dayLabel)
-              .addComponent(dateLabel)
-          )
-          .addComponent(stopButton)
-          .addComponent(editButton)
-          .addComponent(groups.totalTimeLabel)
-
-      );
-
-
-      ParallelGroup headerGroupH = thisLayout.createParallelGroup()
-      .addGroup(
-          thisLayout.createSequentialGroup()
-          .addGroup(
-              thisLayout.createParallelGroup()
-              .addComponent(dayLabel)
-              .addComponent(dateLabel)
-          )
-          .addComponent(stopButton)
-          .addComponent(editButton)
-          .addComponent(groups.totalTimeLabel)
-
-      );
       
       // create vertical groupings
       SequentialGroup vGroup = thisLayout.createSequentialGroup();
@@ -288,21 +260,29 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
       }
       hGroupNotGroups.addGroup(rightGroupGroupH);
 
-      thisLayout.setHorizontalGroup(
-          thisLayout.createParallelGroup()
-          .addGroup(
-              thisLayout.createSequentialGroup()
-              .addGroup(headerGroupH)
-          )
+      thisLayout.setHorizontalGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+          .addGroup(thisLayout.createSequentialGroup()
+		    .addGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+			      .addComponent(dayLabel)
+			      .addComponent(dateLabel)
+                    )
+		    .addComponent(stopButton)
+		    .addComponent(editButton)
+		    .addComponent(groups.totalTimeLabel)
+	  )
           .addGroup(hGroup)
       );
       
-      thisLayout.setVerticalGroup(
-        thisLayout.createSequentialGroup()
-          .addGroup(
-              thisLayout.createParallelGroup()
-                .addGroup(headerGroupV)
-          )
+      thisLayout.setVerticalGroup(thisLayout.createSequentialGroup()
+          .addGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+		    .addGroup(thisLayout.createSequentialGroup()
+			      .addComponent(dayLabel)
+			      .addComponent(dateLabel)
+		    )
+		    .addComponent(stopButton)
+		    .addComponent(editButton)
+		    .addComponent(groups.totalTimeLabel)
+	  )
           .addGroup(vGroup)
       );
       
