@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="256"
-   height="256"
+   width="48"
+   height="48"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45.1"
-   sodipodi:docbase="/home/aviram/My Documents/BlogSphere/blogicons"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="cancel.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0">
@@ -35,8 +35,8 @@
      inkscape:current-layer="icons"
      inkscape:window-width="1024"
      inkscape:window-height="696"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="562"
+     inkscape:window-y="46"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:object-bbox="false"
@@ -47,7 +47,8 @@
      height="2500px"
      showgrid="true"
      inkscape:grid-bbox="false"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:window-maximized="0" />
   <defs
      id="gradients">
     <linearGradient
@@ -122,9 +123,11 @@
      inkscape:groupmode="layer"
      id="icons"
      inkscape:label="icons"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-208)">
     <g
-       id="cancel">
+       id="cancel"
+       transform="matrix(0.1875,0,0,0.1875,0,208)">
       <rect
          id="cancelOuter"
          width="256"
@@ -153,14 +156,16 @@
          x="10"
          height="236" />
       <g
-         style="stroke:#ffffff;stroke-width:35;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="stroke:#ffffff;stroke-width:35;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="cancelX">
         <path
-           d="M 62.84681,62.846809 L 193.15319,193.15319"
-           id="X1" />
+           d="M 62.84681,62.846809 193.15319,193.15319"
+           id="X1"
+           inkscape:connector-curvature="0" />
         <path
-           d="M 62.84681,193.15319 L 193.15319,62.846809"
-           id="X2" />
+           d="M 62.84681,193.15319 193.15319,62.846809"
+           id="X2"
+           inkscape:connector-curvature="0" />
       </g>
     </g>
   </g>

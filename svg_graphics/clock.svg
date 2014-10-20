@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="256"
-   height="256"
+   width="48"
+   height="48"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45.1"
-   sodipodi:docbase="/home/aviram/My Documents/BlogSphere/blogicons"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="clock.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0">
@@ -35,8 +34,8 @@
      inkscape:current-layer="icons"
      inkscape:window-width="1024"
      inkscape:window-height="696"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="542"
+     inkscape:window-y="171"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:object-bbox="false"
@@ -47,7 +46,8 @@
      height="2500px"
      showgrid="true"
      inkscape:grid-bbox="false"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:window-maximized="0" />
   <defs
      id="gradients">
     <linearGradient
@@ -113,9 +113,11 @@
      inkscape:groupmode="layer"
      id="icons"
      inkscape:label="icons"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-208)">
     <g
-       id="clock">
+       id="clock"
+       transform="matrix(0.1875,0,0,0.1875,0,208)">
       <rect
          y="0"
          x="0"
@@ -152,17 +154,20 @@
          sodipodi:cy="128"
          sodipodi:rx="90"
          sodipodi:ry="90"
-         style="fill:none;stroke:#ffffff;stroke-width:25" />
+         style="fill:none;stroke:#ffffff;stroke-width:25"
+         d="m 218,128 c 0,49.70563 -40.29437,90 -90,90 -49.705627,0 -90,-40.29437 -90,-90 0,-49.705627 40.294373,-90 90,-90 49.70563,0 90,40.294373 90,90 z" />
       <g
          id="clockClock"
          style="stroke:#ffffff;stroke-width:20;stroke-linecap:round"
          transform="matrix(0.8660254,0.5,-0.5,0.8660254,81.148748,-46.851252)">
         <path
-           d="M 128,128 L 128,70"
-           id="clockMinute" />
+           d="m 128,128 0,-58"
+           id="clockMinute"
+           inkscape:connector-curvature="0" />
         <path
-           d="M 128,128 L 90,128"
-           id="clockHour" />
+           d="m 128,128 -38,0"
+           id="clockHour"
+           inkscape:connector-curvature="0" />
       </g>
     </g>
   </g>

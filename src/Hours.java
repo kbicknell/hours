@@ -150,12 +150,12 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   }
   
   void stopButtonToStop() {
-    stopButton.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage("NSImage://cancel")));
+    stopButton.setIcon(new ImageIcon("NSImage://cancel"));
     stopButton.setActionCommand("stop");
   }
 
   void stopButtonToAdvance() {
-    stopButton.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage("NSImage://clock")));
+    stopButton.setIcon(new ImageIcon("NSImage://clock"));
     stopButton.setActionCommand("advance");
   }
   
@@ -200,7 +200,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
       }
       {
         editButton = new JButton();
-        editButton.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage("NSImage://edit")));
+        editButton.setIcon(new ImageIcon("NSImage://edit"));
         editButtonToEdit();
         editButton.addActionListener(this);
       }

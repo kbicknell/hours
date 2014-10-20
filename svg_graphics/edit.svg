@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="256"
-   height="256"
+   width="48"
+   height="48"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45.1"
-   sodipodi:docbase="/home/aviram/src/blogicons/default"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="edit.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0">
@@ -29,13 +29,13 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.8710938"
      inkscape:cx="128"
-     inkscape:cy="147.20754"
+     inkscape:cy="-26.593882"
      inkscape:document-units="px"
      inkscape:current-layer="icons"
-     inkscape:window-width="1024"
-     inkscape:window-height="693"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="1066"
+     inkscape:window-height="784"
+     inkscape:window-x="503"
+     inkscape:window-y="117"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:object-bbox="false"
@@ -46,7 +46,8 @@
      height="2500px"
      showgrid="true"
      inkscape:grid-bbox="false"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:window-maximized="0" />
   <defs
      id="gradients">
     <linearGradient
@@ -112,9 +113,11 @@
      inkscape:groupmode="layer"
      id="icons"
      inkscape:label="icons"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-208)">
     <g
-       id="edit">
+       id="edit"
+       transform="matrix(0.1875,0,0,0.1875,0,208)">
       <rect
          style="fill:#d54e1d;fill-opacity:1"
          id="editOuter"
@@ -143,10 +146,11 @@
          x="10"
          height="236" />
       <path
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:50;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:11.30000019;stroke-opacity:1"
-         d="M 65.496257,18.387713 L 18.39477,65.4892 L 117.60339,164.69782 L 118.92746,165.47289 C 120.59303,153.50521 125.33225,142.63021 133.97668,133.98578 C 142.62877,125.33369 153.51591,120.59817 165.49609,118.93655 L 164.70487,117.59633 L 65.496257,18.387713 z M 182.3861,147.84011 C 169.47566,146.42911 160.07675,149.22263 154.64515,154.65424 C 149.21602,160.08336 146.40835,169.4777 147.81487,182.37905 C 147.81487,182.37905 211.89735,229.18398 220.54015,220.54925 C 229.18296,211.91451 182.3861,147.84011 182.3861,147.84011 z "
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         d="M 65.496257,18.387713 18.39477,65.4892 l 99.20862,99.20862 1.32407,0.77507 c 1.66557,-11.96768 6.40479,-22.84268 15.04922,-31.48711 8.65209,-8.65209 19.53923,-13.38761 31.51941,-15.04923 L 164.70487,117.59633 65.496257,18.387713 z M 182.3861,147.84011 c -12.91044,-1.411 -22.30935,1.38252 -27.74095,6.81413 -5.42913,5.42912 -8.2368,14.82346 -6.83028,27.72481 0,0 64.08248,46.80493 72.72528,38.1702 8.64281,-8.63474 -38.15405,-72.70914 -38.15405,-72.70914 z"
          id="pen"
-         sodipodi:nodetypes="ccccsccccscsc" />
+         sodipodi:nodetypes="ccccsccccscsc"
+         inkscape:connector-curvature="0" />
     </g>
   </g>
 </svg>
