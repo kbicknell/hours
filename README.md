@@ -1,0 +1,2 @@
+Most of the svg icons come from blogicons-20070518.zip that used to be available at http://avi.alkalay.net/software/blogicons/ and they were created by Avi Alkalay, see here https://avi.alkalay.net/2007/05/blog-icons.html
+I (Klinton Bicknell) resized many of the svg files to be appropriately sized and created my own png from them. I also created gc.svg and greenc.svg myself.
