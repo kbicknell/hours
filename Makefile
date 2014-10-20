@@ -7,6 +7,7 @@ graphicsfiles = cancel.png clock.png clock2.png edit.png gc.png greenc.png
 graphics = $(addprefix resources/,$(graphicsfiles))
 jgoodiesfiles = jgoodies-common.jar jgoodies-looks.jar
 jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
+icons = resources/cancel.pdf resources/clock.pdf resources/clock2.pdf resources/edit.pdf resources/gc.pdf resources/greenc.pdf
 
 .PHONY : all clean almost-clean
 
@@ -19,7 +20,13 @@ bin/hours : $(src) | bin
 bin:
 	mkdir -p bin
 
-Hours.app : hours.jar $(appstub) mac/Info.plist jgoodies ui.jar
+resources :
+	mkdir resources
+
+resources/%.pdf : svg_graphics/%.svg resources
+	/Applications/Inkscape.app/Contents/Resources/bin/inkscape -z -A $@ $<
+
+Hours.app : hours.jar $(appstub) mac/Info.plist jgoodies ui.jar $(icons)
 	mkdir -p Hours.app/Contents/MacOS
 	mkdir -p Hours.app/Contents/Resources/Java
 	cp $(appstub) Hours.app/Contents/MacOS/
@@ -27,7 +34,7 @@ Hours.app : hours.jar $(appstub) mac/Info.plist jgoodies ui.jar
 	cp mac/PkgInfo Hours.app/Contents/
 	cp mac/Hours.icns Hours.app/Contents/Resources/
 	cp hours.jar Hours.app/Contents/Resources/Java/jar_0.jar
-	cp resources/*.png Hours.app/Contents/Resources/
+	cp resources/*.pdf Hours.app/Contents/Resources/
 	$(foreach jgoody,$(jgoodies),cp $(jgoody) Hours.app/Contents/Resources/Java/;)
 	cp ui.jar Hours.app/Contents/Resources/Java/
 	SetFile -a B Hours.app
@@ -50,6 +57,8 @@ almost-clean :
 	rm -rf hours.jar
 	rm -rf Hours.app
 	rm -rf ui.jar
+	rm -rf $(icons)
+	rm -rf resources
 
 clean : almost-clean
 	rm -rf jgoodies
