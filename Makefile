@@ -14,7 +14,7 @@ icons = resources/cancel.pdf resources/clock.pdf resources/clock2.pdf resources/
 hours.jar : bin/hours
 	jar cf $@ -C bin hours
 
-bin/hours : $(src) | bin
+bin/hours : $(src) bin
 	javac $(src) -d bin
 
 bin:
