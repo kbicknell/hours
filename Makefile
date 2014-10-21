@@ -1,31 +1,31 @@
 all : Hours.app
 
-javafiles = Hours.java HoursCategory.java HoursGroup.java HoursGroupList.java
-src = $(addprefix src/,$(javafiles))
+inkscape = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
+jdkpath = /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+srcfiles = Hours HoursCategory HoursGroup HoursGroupList
+src = $(patsubst %,src/%.java,$(srcfiles))
 appstub = /System/Library/Frameworks/JavaVM.framework/Versions/Current/Resources/MacOS/JavaApplicationStub
 jgoodiesfiles = jgoodies-common-1.8.0.jar jgoodies-looks-2.6.0.jar
 jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
-icons = resources/cancel.pdf resources/clock.pdf resources/clock2.pdf resources/edit.pdf resources/gc.pdf resources/greenc.pdf
+iconnames = cancel clock clock2 edit gc greenc
+icons = $(patsubst %,resources/%.pdf,$(iconnames))
 
 .PHONY : all clean
 
-hours.jar : bin/hours
+hours.jar : $(src)
+	rm -rf bin/
+	mkdir -p bin/
+	javac $(src) -d bin
 	jar cf $@ -C bin hours
 
-bin/hours : $(src) bin
-	javac $(src) -d bin
-
-bin:
-	mkdir -p bin
-
 resources :
-	mkdir resources
+	mkdir -p resources
 
 resources/%.pdf : svg_graphics/%.svg resources
-	/Applications/Inkscape.app/Contents/Resources/bin/inkscape -z -A $@ $<
+	$(inkscape) -z -A $@ $<
 
 ui.jar :
-	cp /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar ui.jar
+	cp $(jdkpath)/Contents/Classes/ui.jar ui.jar
 
 Hours.app : hours.jar $(appstub) mac/Info.plist $(jgoodies) ui.jar $(icons)
 	mkdir -p Hours.app/Contents/MacOS
@@ -41,7 +41,7 @@ Hours.app : hours.jar $(appstub) mac/Info.plist $(jgoodies) ui.jar $(icons)
 	SetFile -a B Hours.app
 
 clean :
-	rm -rf bin/hours
+	rm -rf bin
 	rm -rf hours.jar
 	rm -rf Hours.app
 	rm -rf ui.jar
