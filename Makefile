@@ -5,8 +5,8 @@ jdkpath = /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
 srcfiles = Hours HoursCategory HoursGroup HoursGroupList
 src = $(patsubst %,src/%.java,$(srcfiles))
 appstub = /System/Library/Frameworks/JavaVM.framework/Versions/Current/Resources/MacOS/JavaApplicationStub
-jgoodiesfiles = jgoodies-common-1.8.0.jar jgoodies-looks-2.6.0.jar
-jgoodies = $(addprefix jgoodies/,$(jgoodiesfiles))
+jgoodiesfiles = jgoodies-common-1.8.0 jgoodies-looks-2.6.0
+jgoodies = $(patsubst %,jgoodies/%.jar,$(jgoodiesfiles))
 iconnames = cancel clock clock2 edit gc greenc
 icons = $(patsubst %,resources/%.pdf,$(iconnames))
 
@@ -18,10 +18,8 @@ hours.jar : $(src)
 	javac $(src) -d bin
 	jar cf $@ -C bin hours
 
-resources :
+resources/%.pdf : svg_graphics/%.svg
 	mkdir -p resources
-
-resources/%.pdf : svg_graphics/%.svg resources
 	$(inkscape) -z -A $@ $<
 
 ui.jar :
