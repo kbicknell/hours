@@ -221,7 +221,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
         groupGroupV.addGap(15);
         groupGroupV.addComponent(g.groupLabel);
         for (HoursCategory c: g.categories()) {
-          ParallelGroup catGroupV = thisLayout.createParallelGroup()
+          ParallelGroup catGroupV = thisLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
             .addComponent(c.minLabel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
             .addComponent(c.inButton).addComponent(c.catLabel);
           groupGroupV.addGroup(catGroupV);
@@ -274,7 +274,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
       );
       
       thisLayout.setVerticalGroup(thisLayout.createSequentialGroup()
-          .addGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+          .addGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
 		    .addGroup(thisLayout.createSequentialGroup()
 			      .addComponent(dayLabel)
 			      .addComponent(dateLabel)
