@@ -1,2 +1,3 @@
-Most of the svg icons come from blogicons-20070518.zip that used to be available at http://avi.alkalay.net/software/blogicons/ and they were created by Avi Alkalay, see here https://avi.alkalay.net/2007/05/blog-icons.html
-I (Klinton Bicknell) resized many of the svg files to be appropriately sized and created my own png from them. I also created gc.svg and greenc.svg myself.
+This is a simple category-based time tracking program written in java for the Mac. (Since it's java, it can probably be ported to other platforms without too much effort.)
+Four of the svg icons are resized versions of those created by Avi Alkalay, which used to be available in blogicons-20070518.zip from http://avi.alkalay.net/software/blogicons/ . See also https://avi.alkalay.net/2007/05/blog-icons.html . The other two svg icons, I created myself.
+The `Makefile` currently isn't working properly, so manually do a `make almost-clean` prior to a `make` for now to make sure everything is updated.
