@@ -5,9 +5,9 @@ appstub = /System/Library/Frameworks/JavaVM.framework/Versions/Current/Resources
 
 # app path shortcuts
 conts = Hours.app/Contents
+mac = $(conts)/MacOS
 res = $(conts)/Resources
 jav = $(res)/Java
-mac = $(conts)/MacOS
 
 srcfiles = Hours HoursCategory HoursGroup HoursGroupList
 src = $(patsubst %,src/%.java,$(srcfiles))
@@ -25,7 +25,7 @@ $(jav)/jar_0.jar : $(src)
 	jar cf $@ -C bin hours
 	rm -rf bin/
 
-$(res)/%.pdf : svg_graphics/%.svg
+$(res)/%.pdf : svg/%.svg
 	$(inkscape) -z -A $@ $<
 
 $(jav)/ui.jar : $(jdkpath)/Contents/Classes/ui.jar
@@ -39,7 +39,6 @@ Hours.app :
 	SetFile -a B Hours.app
 
 clean :
-	rm -rf bin/
 	rm -rf $(jav)/jar_0.jar
 	rm -rf $(icons)
 	rm -rf $(jav)/ui.jar
