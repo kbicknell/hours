@@ -13,6 +13,6 @@ Installation
 ------------
 
 * The only prerequisite to build this on a Mac should be Inkscape, the open source vector graphics editor, which can be downloaded from `www.inkscape.org` or installed via `macports`. Install that first.
-* Next, make sure the three paths at the top of `Makefile` are correct for your system (including the path to the inkscape command-line version).
+* Next, make sure the paths to the Java SDK and the inkscape binary at the top of `Makefile` are correct for your system.
 * Run `make`.
 * Finally, copy the application bundle `Hours.app` to the directory of your choice.
