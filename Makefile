@@ -1,6 +1,6 @@
 # non-local paths (may need to change these for your system)
 inkscape = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
-jdkpath = /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+jdkpath = /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 
 # app path shortcuts
 conts = Hours.app/Contents
@@ -12,7 +12,7 @@ src = $(patsubst %,src/%.java,$(srcfiles))
 iconnames = cancel clock clock2 edit gc greenc
 icons = $(patsubst %,$(res)/%.pdf,$(iconnames))
 
-all : Hours.app $(jav)/jar_0.jar $(icons) $(jav)/ui.jar
+all : Hours.app $(jav)/jar_0.jar $(icons) $(jav)/rt.jar
 
 .PHONY : all clean Hours.app
 
@@ -26,7 +26,7 @@ $(jav)/jar_0.jar : $(src)
 $(res)/%.pdf : svg/%.svg
 	$(inkscape) -z -A $@ $<
 
-$(jav)/ui.jar : $(jdkpath)/Contents/Classes/ui.jar
+$(jav)/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
 	cp $< $@
 
 Hours.app :
@@ -35,4 +35,4 @@ Hours.app :
 clean :
 	rm -rf $(jav)/jar_0.jar
 	rm -rf $(icons)
-	rm -rf $(jav)/ui.jar
+	rm -rf $(jav)/rt.jar
