@@ -6,7 +6,7 @@ jdkpath = /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 # app path shortcuts
 conts = Hours.app/Contents
 res = $(conts)/Resources
-jav = $(res)/Java
+jav = $(conts)/Java
 
 srcfiles = Hours HoursCategory HoursGroup HoursGroupList
 src = $(patsubst %,src/%.java,$(srcfiles))
