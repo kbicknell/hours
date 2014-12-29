@@ -1,4 +1,5 @@
-# non-local paths (may need to change these for your system)
+# non-local paths (may need to change these for your system if you
+# want to rebuild icons or get a fresh rt.jar)
 inkscape = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 jdkpath = /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 
