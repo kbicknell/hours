@@ -12,14 +12,14 @@ src = $(patsubst %,src/%.java,$(srcfiles))
 iconnames = cancel clock clock2 edit gc greenc
 icons = $(patsubst %,$(res)/%.pdf,$(iconnames))
 
-all : Hours.app $(jav)/jar_0.jar $(icons) $(jav)/rt.jar
+all : Hours.app $(jav)/jar_0.jar $(icons)
 
 .PHONY : all clean Hours.app
 
-$(jav)/jar_0.jar : $(src)
+$(jav)/jar_0.jar : $(src) $(jav)/rt.jar
 	rm -rf bin/
 	mkdir -p bin/
-	javac $(src) -d bin
+	javac -classpath ./$(jav)/rt.jar -d bin $(src)
 	jar cf $@ -C bin hours
 	rm -rf bin/
 
