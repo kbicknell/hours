@@ -18,11 +18,19 @@ all : Hours.app $(jav)/jar_0.jar $(icons)
 .PHONY : all clean Hours.app
 
 $(jav)/jar_0.jar : $(src) $(jav)/rt.jar
+	rm -rf finalize.sh
 	rm -rf bin/
+	echo rm -rf bin/ >> finalize.sh
 	mkdir -p bin/
+	echo mkdir -p bin/ >> finalize.sh
 	javac -classpath ./$(jav)/rt.jar -d bin $(src)
+	echo javac -classpath ./$(jav)/rt.jar -d bin $(src) >> finalize.sh
 	jar cf $@ -C bin hours
+	echo jar cf $@ -C bin hours >> finalize.sh
 	rm -rf bin/
+	rm -rf bin/ >> finalize.sh
+	echo SetFile -a B Hours.app >> finalize.sh
+	chmod +x finalize.sh
 
 $(res)/%.pdf : svg/%.svg
 	$(inkscape) -z -A $@ $<
@@ -37,3 +45,4 @@ clean :
 	rm -rf $(jav)/jar_0.jar
 	rm -rf $(icons)
 	rm -rf $(jav)/rt.jar
+	rm -rf finalize.sh

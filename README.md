@@ -7,9 +7,8 @@ A simple category-based time tracking program written in Java for the Mac.
 Installation
 ------------
 
-* To install, the only tools you'll need are `make` and `javac`. Macs should have the latter by default, but for the former, you'll need to install the Xcode command line tools.
 * First, clone or download the repository.
-* From the `hours` directory, run the command `make` in terminal.
+* From the `hours` directory, run the command `./finalize.sh` in terminal.
 * Now, copy the application bundle `Hours.app` (inside the `hours` directory) to the location of your choice (e.g., `Applications`).
 
 Build dependencies
