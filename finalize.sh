@@ -5,5 +5,5 @@ jar cf bin/jar_0.jar -C bin hours
 rm -rf dist/
 mkdir -p dist
 ant bundle-hours
-cp pdf/cancel.pdf pdf/clock.pdf pdf/clock2.pdf pdf/edit.pdf pdf/gc.pdf pdf/greenc.pdf dist/Hours.app/Contents/Resources/
+cp png/cancel_48.png png/cancel_48@2x.png png/clock_48.png png/clock_48@2x.png png/edit_48.png png/edit_48@2x.png png/gc_24.png png/gc_24@2x.png png/greenc_24.png png/greenc_24@2x.png dist/Hours.app/Contents/Resources/
 cp hours.data dist/

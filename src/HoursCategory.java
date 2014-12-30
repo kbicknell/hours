@@ -29,9 +29,9 @@ public class HoursCategory implements ActionListener {
   public JLabel catLabel;
   public JLabel minLabel;
   public JTextField minTextField;
-  private ImageIcon greyIcon = new ImageIcon("NSImage://gc");
+  private ImageIcon greyIcon = new ImageIcon("NSImage://gc_24");
   
-  private ImageIcon greenIcon = new ImageIcon("NSImage://greenc");
+  private ImageIcon greenIcon = new ImageIcon("NSImage://greenc_24");
   HoursGroup group;
   
   public void actionPerformed(ActionEvent e) {
