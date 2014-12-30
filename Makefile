@@ -36,7 +36,6 @@ $(jav)/jar_0.jar : $(src) lib/rt.jar
 	echo jar cf $@ -C bin hours >> finalize.sh
 	rm -rf bin/
 	rm -rf bin/ >> finalize.sh
-	echo SetFile -a B Hours.app >> finalize.sh
 	chmod +x finalize.sh
 
 $(res)/%.pdf : svg/%.svg
@@ -44,9 +43,6 @@ $(res)/%.pdf : svg/%.svg
 
 lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
 	cp $< $@
-
-Hours.app :
-	SetFile -a B Hours.app
 
 clean :
 	rm -rf $(jav)/jar_0.jar
