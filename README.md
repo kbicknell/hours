@@ -23,4 +23,3 @@ Credits
 --------------------------
 
 * Four of the svg icons are resized versions of those created by Avi Alkalay, which used to be available in `blogicons-20070518.zip` from [http://avi.alkalay.net/software/blogicons/](http://avi.alkalay.net/software/blogicons/). See also [https://avi.alkalay.net/2007/05/blog-icons.html](https://avi.alkalay.net/2007/05/blog-icons.html). The other two svg icons, I created myself.
-* This repository includes the jgoodies-looks and jgoodies-common Java libraries, available at [http://www.jgoodies.com](http://www.jgoodies.com), which are provided under the BSD open source license.
