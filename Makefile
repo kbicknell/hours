@@ -24,14 +24,14 @@ dist/Hours.app : $(jav)/jar_0.jar $(icons)
 	cp $(icons) dist/Hours.app/Contents/Resources/
 	cp hours.data dist/
 
-$(jav)/jar_0.jar : $(src) $(jav)/rt.jar
+$(jav)/jar_0.jar : $(src) lib/rt.jar
 	rm -rf finalize.sh
 	rm -rf bin/
 	echo rm -rf bin/ >> finalize.sh
 	mkdir -p bin/
 	echo mkdir -p bin/ >> finalize.sh
-	javac -classpath ./$(jav)/rt.jar -d bin $(src)
-	echo javac -classpath ./$(jav)/rt.jar -d bin $(src) >> finalize.sh
+	javac -classpath ./lib/rt.jar -d bin $(src)
+	echo javac -classpath ./lib/rt.jar -d bin $(src) >> finalize.sh
 	jar cf $@ -C bin hours
 	echo jar cf $@ -C bin hours >> finalize.sh
 	rm -rf bin/
@@ -42,7 +42,7 @@ $(jav)/jar_0.jar : $(src) $(jav)/rt.jar
 $(res)/%.pdf : svg/%.svg
 	$(inkscape) -z -A $@ $<
 
-$(jav)/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
+lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
 	cp $< $@
 
 Hours.app :
@@ -51,6 +51,6 @@ Hours.app :
 clean :
 	rm -rf $(jav)/jar_0.jar
 	rm -rf $(icons)
-	rm -rf $(jav)/rt.jar
+	rm -rf lib/rt.jar
 	rm -rf finalize.sh
 	rm -rf dist/
