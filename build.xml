@@ -9,7 +9,7 @@
             name="Hours"
             displayname="Hours"
             identifier="hours"
-            icon="Hours.app/Contents/Resources/Hours.icns"
+            icon="Hours.icns"
             shortversion="1.1"
             mainclassname="hours.Hours">
             <classpath file="bin/jar_0.jar" />
