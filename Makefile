@@ -43,7 +43,6 @@ lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
 	cp $< $@
 
 clean :
-	rm -rf $(jav)/jar_0.jar
 	rm -rf $(icons)
 	rm -rf lib/rt.jar
 	rm -rf finalize.sh
