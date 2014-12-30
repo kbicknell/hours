@@ -9,7 +9,10 @@ Installation
 
 * First, clone or download the repository.
 * From the `hours` directory, run the command `./finalize.sh` in terminal.
-* Now, copy the application bundle `Hours.app` (inside the `hours` directory) to the location of your choice. Also copy `hours.data` there and edit its categories as you see fit. The app will generate its datafiles in the folder it lives in.
+* Now, copy the contents of the `hours/dist` directory (i.e., the application bundle `Hours.app` and the file `hours.data`) to the location of your choice (probably not the Applications folder: see below).
+* With a text editor, edit the categories in `hours.data` as you see fit.
+* Now you can run the app. Note that it will generate its datafiles in the folder it lives in. Thus, you probably don't want to put it in your Applications folder.
+
 
 Build dependencies
 ------------------

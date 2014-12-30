@@ -55,7 +55,7 @@ lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
 clean :
 	rm -rf $(icons)
 	rm -rf lib/rt.jar
-	rm -rf finalize.sh
+	rm -rf bundle.sh compile.sh finalize.sh
 	rm -rf bin/
 	rm -rf dist/
 	rm -rf pdf/
