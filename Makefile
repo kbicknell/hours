@@ -11,7 +11,7 @@ jav = $(conts)/Java
 srcfiles = Hours HoursCategory HoursGroup HoursGroupList
 src = $(patsubst %,src/%.java,$(srcfiles))
 iconnames = cancel clock clock2 edit gc greenc
-icons = $(patsubst %,$(res)/%.pdf,$(iconnames))
+icons = $(patsubst %,pdf/%.pdf,$(iconnames))
 
 all : Hours.app bin/jar_0.jar $(icons) dist/Hours.app
 
@@ -36,7 +36,8 @@ bin/jar_0.jar : $(src) lib/rt.jar
 	echo jar cf $@ -C bin hours >> finalize.sh
 	chmod +x finalize.sh
 
-$(res)/%.pdf : svg/%.svg
+pdf/%.pdf : svg/%.svg
+	mkdir -p pdf
 	$(inkscape) -z -A $@ $<
 
 lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
@@ -48,3 +49,4 @@ clean :
 	rm -rf finalize.sh
 	rm -rf bin/
 	rm -rf dist/
+	rm -rf pdf/
