@@ -9,6 +9,8 @@
             name="Hours"
             displayname="Hours"
             identifier="hours.Hours"
+            icon="Hours.app/Contents/Resources/Hours.icns"
+            shortversion="1.1"
             mainclassname="hours.Hours">
             <classpath file="Hours.app/Contents/Java/jar_0.jar" />
         </bundleapp>
