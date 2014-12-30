@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Hours" default="default" basedir=".">        
+    <taskdef name="bundleapp"
+             classname="com.oracle.appbundler.AppBundlerTask"   
+             classpath="lib/appbundler-1.0.jar" />
+
+    <target name="bundle-hours">
+        <bundleapp outputdirectory="dist"
+            name="Hours"
+            displayname="Hours"
+            identifier="hours.Hours"
+            mainclassname="hours.Hours">
+            <classpath file="Hours.app/Contents/Java/jar_0.jar" />
+        </bundleapp>
+    </target>
+
+</project>
