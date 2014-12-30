@@ -13,18 +13,18 @@ src = $(patsubst %,src/%.java,$(srcfiles))
 iconnames = cancel clock clock2 edit gc greenc
 icons = $(patsubst %,$(res)/%.pdf,$(iconnames))
 
-all : Hours.app $(jav)/jar_0.jar $(icons) dist/Hours.app
+all : Hours.app bin/jar_0.jar $(icons) dist/Hours.app
 
 .PHONY : all clean Hours.app
 
-dist/Hours.app : $(jav)/jar_0.jar $(icons)
+dist/Hours.app : bin/jar_0.jar $(icons)
 	rm -rf dist/
 	mkdir -p dist
 	ant bundle-hours
 	cp $(icons) dist/Hours.app/Contents/Resources/
 	cp hours.data dist/
 
-$(jav)/jar_0.jar : $(src) lib/rt.jar
+bin/jar_0.jar : $(src) lib/rt.jar
 	rm -rf finalize.sh
 	rm -rf bin/
 	echo rm -rf bin/ >> finalize.sh
@@ -34,8 +34,6 @@ $(jav)/jar_0.jar : $(src) lib/rt.jar
 	echo javac -classpath ./lib/rt.jar -d bin $(src) >> finalize.sh
 	jar cf $@ -C bin hours
 	echo jar cf $@ -C bin hours >> finalize.sh
-	rm -rf bin/
-	rm -rf bin/ >> finalize.sh
 	chmod +x finalize.sh
 
 $(res)/%.pdf : svg/%.svg
@@ -49,4 +47,5 @@ clean :
 	rm -rf $(icons)
 	rm -rf lib/rt.jar
 	rm -rf finalize.sh
+	rm -rf bin/
 	rm -rf dist/

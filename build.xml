@@ -12,7 +12,7 @@
             icon="Hours.app/Contents/Resources/Hours.icns"
             shortversion="1.1"
             mainclassname="hours.Hours">
-            <classpath file="Hours.app/Contents/Java/jar_0.jar" />
+            <classpath file="bin/jar_0.jar" />
             <option value="-Duser.dir=$APP_ROOT/.." />
         </bundleapp>
     </target>
