@@ -22,6 +22,7 @@ dist/Hours.app : $(jav)/jar_0.jar $(icons)
 	mkdir -p dist
 	ant bundle-hours
 	cp $(icons) dist/Hours.app/Contents/Resources/
+	cp hours.data dist/
 
 $(jav)/jar_0.jar : $(src) $(jav)/rt.jar
 	rm -rf finalize.sh
