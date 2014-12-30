@@ -22,7 +22,7 @@ finalize.sh : dist/Hours.app bin/jar_0.jar
 	cat compile.sh bundle.sh > finalize.sh
 	chmod +x finalize.sh
 
-dist/Hours.app : bin/jar_0.jar $(icons) $(hidpiicons)
+dist/Hours.app : bin/jar_0.jar $(icons) $(hidpiicons) Hours.icns
 	rm -rf bundle.sh
 	rm -rf dist/
 	echo rm -rf dist/ >> bundle.sh
@@ -34,6 +34,23 @@ dist/Hours.app : bin/jar_0.jar $(icons) $(hidpiicons)
 	echo cp png/* dist/Hours.app/Contents/Resources/ >> bundle.sh
 	cp hours.data dist/
 	echo cp hours.data dist/ >> bundle.sh
+
+Hours.icns : Hours.iconset
+	iconutil -c icns -o $@ $^
+
+Hours.iconset : svg/clock2_256.svg
+	rm -rf Hours.iconset
+	mkdir Hours.iconset
+	$(inkscape) -z -e Hours.iconset/icon_16x16.png --export-width=16 --export-height=16 $^
+	$(inkscape) -z -e Hours.iconset/icon_16x16@2x.png --export-width=32 --export-height=32 $^
+	$(inkscape) -z -e Hours.iconset/icon_32x32.png --export-width=32 --export-height=32 $^
+	$(inkscape) -z -e Hours.iconset/icon_32x32@2x.png --export-width=64 --export-height=64 $^
+	$(inkscape) -z -e Hours.iconset/icon_128x128.png --export-width=128 --export-height=128 $^
+	$(inkscape) -z -e Hours.iconset/icon_128x128@2x.png --export-width=256 --export-height=256 $^
+	$(inkscape) -z -e Hours.iconset/icon_256x256.png --export-width=256 --export-height=256 $^
+	$(inkscape) -z -e Hours.iconset/icon_256x256@2x.png --export-width=512 --export-height=512 $^
+	$(inkscape) -z -e Hours.iconset/icon_512x512.png --export-width=512 --export-height=512 $^
+	$(inkscape) -z -e Hours.iconset/icon_512x512@2x.png --export-width=1024 --export-height=1024 $^
 
 bin/jar_0.jar : $(src) lib/rt.jar
 	rm -rf compile.sh
@@ -68,3 +85,5 @@ clean :
 	rm -rf bin/
 	rm -rf dist/
 	rm -rf png/
+	rm -rf Hours.iconset
+	rm -rf Hours.icns
