@@ -11,6 +11,7 @@
             identifier="hours"
             icon="Hours.icns"
             shortversion="1.1"
+            version="1.1"
             mainclassname="hours.Hours">
             <classpath file="bin/jar_0.jar" />
             <option value="-Duser.dir=$APP_ROOT/.." />
