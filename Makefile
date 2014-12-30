@@ -13,28 +13,37 @@ src = $(patsubst %,src/%.java,$(srcfiles))
 iconnames = cancel clock clock2 edit gc greenc
 icons = $(patsubst %,pdf/%.pdf,$(iconnames))
 
-all : Hours.app bin/jar_0.jar $(icons) dist/Hours.app
+all : dist/Hours.app finalize.sh
 
-.PHONY : all clean Hours.app
+.PHONY : all clean
+
+finalize.sh : dist/Hours.app bin/jar_0.jar
+	cat compile.sh bundle.sh > finalize.sh
+	chmod +x finalize.sh
 
 dist/Hours.app : bin/jar_0.jar $(icons)
+	rm -rf bundle.sh
 	rm -rf dist/
+	echo rm -rf dist/ >> bundle.sh
 	mkdir -p dist
+	echo mkdir -p dist >> bundle.sh
 	ant bundle-hours
+	echo ant bundle-hours >> bundle.sh
 	cp $(icons) dist/Hours.app/Contents/Resources/
+	echo cp $(icons) dist/Hours.app/Contents/Resources/ >> bundle.sh
 	cp hours.data dist/
+	echo cp hours.data dist/ >> bundle.sh
 
 bin/jar_0.jar : $(src) lib/rt.jar
-	rm -rf finalize.sh
+	rm -rf compile.sh
 	rm -rf bin/
-	echo rm -rf bin/ >> finalize.sh
+	echo rm -rf bin/ >> compile.sh
 	mkdir -p bin/
-	echo mkdir -p bin/ >> finalize.sh
+	echo mkdir -p bin/ >> compile.sh
 	javac -classpath ./lib/rt.jar -d bin $(src)
-	echo javac -classpath ./lib/rt.jar -d bin $(src) >> finalize.sh
+	echo javac -classpath ./lib/rt.jar -d bin $(src) >> compile.sh
 	jar cf $@ -C bin hours
-	echo jar cf $@ -C bin hours >> finalize.sh
-	chmod +x finalize.sh
+	echo jar cf $@ -C bin hours >> compile.sh
 
 pdf/%.pdf : svg/%.svg
 	mkdir -p pdf
