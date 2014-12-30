@@ -17,11 +17,11 @@ all : Hours.app $(jav)/jar_0.jar $(icons) dist/Hours.app
 
 .PHONY : all clean Hours.app
 
-dist/Hours.app : $(jav)/jar_0.jar
+dist/Hours.app : $(jav)/jar_0.jar $(icons)
 	rm -rf dist/
 	mkdir -p dist
 	ant bundle-hours
-	mkdir -p dist/Hours.app/Contents/Resources
+	cp $(icons) dist/Hours.app/Contents/Resources/
 
 $(jav)/jar_0.jar : $(src) $(jav)/rt.jar
 	rm -rf finalize.sh
