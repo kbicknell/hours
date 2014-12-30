@@ -6,6 +6,7 @@ package hours;
 import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -25,10 +26,14 @@ public class HoursGroupList {
   private int currentTaskGroup;
   static final private String dataFilename = "hours.data";
   static final private String backupFilename = "hours.data.backup";
+  private String dataFilenamePath;
+  private String backupFilenamePath;
   private int totalms;      // total time on all tasks (in milliseconds)
   public JLabel totalTimeLabel;
   
   public HoursGroupList(Hours parentFrame) {
+    this.dataFilenamePath = new File(dataFilename).getAbsolutePath();
+    this.backupFilenamePath = new File(backupFilename).getAbsolutePath();
     this.groups = new Vector<HoursGroup>();
     this.parentFrame = parentFrame;
     this.currentTaskGroup = -1;
@@ -44,7 +49,7 @@ public class HoursGroupList {
     
     BufferedReader reader;
     try {
-      reader = new BufferedReader (new FileReader(dataFilename));
+      reader = new BufferedReader (new FileReader(dataFilenamePath));
       try {
         while ((line = reader.readLine()) != null) {
           StringTokenizer st = new StringTokenizer(line, "\t");
@@ -73,7 +78,7 @@ public class HoursGroupList {
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
-    writeData(backupFilename, true);
+    writeData(backupFilenamePath, true);
     updateTotalTimeLabel();
   }
   
@@ -124,7 +129,7 @@ public class HoursGroupList {
     for (HoursGroup g: groups) {
       g.switchAllToLabel();
     }
-    writeData(dataFilename, true);
+    writeData(dataFilenamePath, true);
   }
   
   public void stopCurrentTask(boolean doWrite) {
@@ -132,7 +137,7 @@ public class HoursGroupList {
       groups.get(currentTaskGroup).stopCurrentTask();
       currentTaskGroup = -1;
       if (doWrite) {
-        writeData(dataFilename, true);
+        writeData(dataFilenamePath, true);
       }
     }
   }
@@ -143,7 +148,7 @@ public class HoursGroupList {
     }
     totalms = 0;
     updateTotalTimeLabel();
-    writeData(dataFilename, true);
+    writeData(dataFilenamePath, true);
   }
   
   /** 
@@ -158,6 +163,6 @@ public class HoursGroupList {
   void setCurrentTaskGroup(int index) {
     currentTaskGroup = index;
     parentFrame.stopButtonToStop();
-    writeData(dataFilename, true);
+    writeData(dataFilenamePath, true);
   }
 }

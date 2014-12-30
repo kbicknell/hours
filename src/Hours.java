@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -39,6 +40,8 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   Image dockIcon;
   static final private String hoursFilename = ".hours";
   static final private String boundsFilename = ".hoursbounds";
+  private String hoursFilenamePath;
+  private String boundsFilenamePath;
   int x;
   int y;
   int width;
@@ -71,6 +74,8 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   
   public Hours() {
     super();
+    hoursFilenamePath = new File(hoursFilename).getAbsolutePath();
+    boundsFilenamePath = new File(boundsFilename).getAbsolutePath();
     macOSApplication = Application.getApplication();
     dockIcon = Toolkit.getDefaultToolkit().getImage("NSImage://clock2");
     macOSApplication.setDockIconImage(dockIcon);
@@ -85,7 +90,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
     groups = new HoursGroupList(this);
 
     try {
-      BufferedReader reader = new BufferedReader (new FileReader(hoursFilename));
+      BufferedReader reader = new BufferedReader (new FileReader(hoursFilenamePath));
       try {
         int year = Integer.parseInt(reader.readLine());
         int month = Integer.parseInt(reader.readLine());
@@ -105,9 +110,8 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   }
   
   private void loadBounds() {
-    
     try {
-      BufferedReader reader = new BufferedReader (new FileReader(boundsFilename));
+      BufferedReader reader = new BufferedReader (new FileReader(boundsFilenamePath));
       try {
         x = Integer.parseInt(reader.readLine());
         y = Integer.parseInt(reader.readLine());
@@ -126,7 +130,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   
   private void updateBoundsFile(Rectangle bounds) {
     try {
-      BufferedWriter writer = new BufferedWriter(new FileWriter(boundsFilename));
+      BufferedWriter writer = new BufferedWriter(new FileWriter(boundsFilenamePath));
       writer.write(Integer.toString(bounds.x));
       writer.write("\n");
       writer.write(Integer.toString(bounds.y));
@@ -169,7 +173,7 @@ public class Hours extends javax.swing.JFrame implements ActionListener {
   
   private void updateHoursFile() {
     try {
-      BufferedWriter writer = new BufferedWriter(new FileWriter(hoursFilename));
+      BufferedWriter writer = new BufferedWriter(new FileWriter(hoursFilenamePath));
       writer.write(Integer.toString(calendar.get(Calendar.YEAR)));
       writer.write("\n");
       writer.write(Integer.toString(calendar.get(Calendar.MONTH)));
