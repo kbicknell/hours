@@ -1,12 +1,5 @@
-# non-local paths (may need to change these for your system if you
-# want to rebuild icons or get a fresh rt.jar)
+# inkscape path (may need to change if you want to rebuild icons)
 inkscape = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
-jdkpath = /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
-
-# app path shortcuts
-conts = Hours.app/Contents
-res = $(conts)/Resources
-jav = $(conts)/Java
 
 srcfiles = Hours HoursCategory HoursGroup HoursGroupList
 src = $(patsubst %,src/%.java,$(srcfiles))
@@ -52,14 +45,14 @@ Hours.iconset : svg/clock2_256.svg
 	$(inkscape) -z -e Hours.iconset/icon_512x512.png --export-width=512 --export-height=512 $^
 	$(inkscape) -z -e Hours.iconset/icon_512x512@2x.png --export-width=1024 --export-height=1024 $^
 
-bin/jar_0.jar : $(src) lib/rt.jar
+bin/jar_0.jar : $(src)
 	rm -rf compile.sh
 	rm -rf bin/
 	echo rm -rf bin/ >> compile.sh
 	mkdir -p bin/
 	echo mkdir -p bin/ >> compile.sh
-	javac -classpath ./lib/rt.jar -d bin $(src)
-	echo javac -classpath ./lib/rt.jar -d bin $(src) >> compile.sh
+	javac -XDignore.symbol.file=true -d bin $(src)
+	echo javac -XDignore.symbol.file=true -d bin $(src) >> compile.sh
 	jar cf $@ -C bin hours
 	echo jar cf $@ -C bin hours >> compile.sh
 
@@ -75,12 +68,8 @@ png/%_24@2x.png : svg/%_24.svg
 	mkdir -p png
 	$(inkscape) -z -e $@ --export-width=48 --export-height=48 $<
 
-lib/rt.jar : $(jdkpath)/Contents/Home/jre/lib/rt.jar
-	cp $< $@
-
 clean :
 	rm -rf $(icons)
-	rm -rf lib/rt.jar
 	rm -rf bundle.sh compile.sh finalize.sh
 	rm -rf bin/
 	rm -rf dist/
